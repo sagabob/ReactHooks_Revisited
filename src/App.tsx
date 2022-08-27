@@ -1,12 +1,14 @@
 import React from "react";
 import WatchCountDemo from "./problems/stale-closures/WatchCountDemo";
-
+import { ChakraProvider } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 function App() {
   return (
-    <>
-      <h1>Hello world</h1>
-      <WatchCountDemo />
-    </>
+    <ChakraProvider>
+      <Container>
+        <WatchCountDemo />
+      </Container>
+    </ChakraProvider>
   );
 }
 

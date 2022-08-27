@@ -1,24 +1,28 @@
 import { Box, Button, Heading, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-export default function WatchCountA() {
+export default function WatchCountB() {
   const [count, setCount] = useState(0);
   const outputText = React.useRef<HTMLDivElement>(null);
 
-  useEffect(function () {
-    setInterval(function log() {
-      
-      if (outputText.current !== null)
+  useEffect(function() {
+    const id = setInterval(function log() {
+        if (outputText.current !== null)
         outputText.current.innerText = `Watch Count (with current count: ${count})`;
     }, 2000);
-  }, []);
+    return function() {
+      clearInterval(id);
+    }
+  }, [count]);
+
+  
   return (
     <VStack
       shadow="md"
       borderWidth="1px"
       padding="5"
       w="500px"
-      backgroundColor="yellow.200"
+      backgroundColor="green.200"
     >
       <Heading fontSize="md" ref={outputText}>Watch Count (with current count)</Heading>
       <Box
