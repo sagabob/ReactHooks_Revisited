@@ -1,7 +1,7 @@
 {
   "name": "reacthooks_revisited",
   "version": "1.0.0",
-  "description": "A comprehensive look on how to use React Hooks",  
+  "description": "A comprehensive look on how to use React Hooks",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
