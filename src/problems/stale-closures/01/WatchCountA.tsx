@@ -7,20 +7,21 @@ export default function WatchCountA() {
 
   useEffect(function () {
     setInterval(function log() {
-      
       if (outputText.current !== null)
-        outputText.current.innerText = `Watch Count (with current count: ${count})`;
+        outputText.current.innerText = `Watch Count (with current count: ${count}) (updated)`;
     }, 2000);
   }, []);
   return (
     <VStack
       shadow="md"
       borderWidth="1px"
-      padding="5"
+      padding="5px"
       w="500px"
       backgroundColor="yellow.200"
     >
-      <Heading fontSize="md" ref={outputText}>Watch Count (with current count)</Heading>
+      <Heading fontSize="md" ref={outputText}>
+        Watch Count (with current count)
+      </Heading>
       <Box
         display="flex"
         alignItems="center"
@@ -36,9 +37,8 @@ export default function WatchCountA() {
         {count}
         <Button colorScheme="blackAlpha" onClick={() => setCount(count + 1)}>
           +
-        </Button>
+        </Button>       
       </Box>
-      
     </VStack>
   );
 }

@@ -5,26 +5,30 @@ export default function WatchCountB() {
   const [count, setCount] = useState(0);
   const outputText = React.useRef<HTMLDivElement>(null);
 
-  useEffect(function() {
-    const id = setInterval(function log() {
+  useEffect(
+    function () {
+      const id = setInterval(function log() {
         if (outputText.current !== null)
-        outputText.current.innerText = `Watch Count (with current count: ${count})`;
-    }, 2000);
-    return function() {
-      clearInterval(id);
-    }
-  }, [count]);
+          outputText.current.innerText = `Watch Count (with current count: ${count}) (updated)`;
+      }, 2000);
+      return function () {
+        clearInterval(id);
+      };
+    },
+    [count]
+  );
 
-  
   return (
     <VStack
       shadow="md"
       borderWidth="1px"
-      padding="5"
+      padding="5px"
       w="500px"
       backgroundColor="green.200"
     >
-      <Heading fontSize="md" ref={outputText}>Watch Count (with current count)</Heading>
+      <Heading fontSize="md" ref={outputText}>
+        Watch Count (with current count)
+      </Heading>
       <Box
         display="flex"
         alignItems="center"
@@ -42,7 +46,6 @@ export default function WatchCountB() {
           +
         </Button>
       </Box>
-      
     </VStack>
   );
 }
