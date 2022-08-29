@@ -7,7 +7,7 @@ import WatchCountB from './WathCountB'
 
 function WatchCountDemo() {
   return (
-    <VStack spacing='5px'>
+    <VStack spacing='20px' m="20px">
       <WatchCountA />
       <WatchCountB />
     </VStack>
