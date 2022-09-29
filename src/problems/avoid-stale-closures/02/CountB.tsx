@@ -5,7 +5,7 @@ export default function CountA() {
   const [count, setCount] = useState(0);
 
   const increaseWithCallback = useCallback(() => {
-    setCount(count + 1);
+    setCount(count => count + 1);
   }, [count]);
 
   const increase = () => {
@@ -14,7 +14,7 @@ export default function CountA() {
   const handleClick = () => {
     increase();
     increase();
-    increase();
+    increaseWithCallback();
   };
   return (
     <>
