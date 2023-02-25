@@ -29,23 +29,9 @@ export default function () {
 
   return (
     <>
-      <VStack
-        shadow="md"
-        borderWidth="1px"
-        padding="5px"
-        w="500px"
-        backgroundColor="yellow.200"
-      >
+      <VStack shadow="md" borderWidth="1px" padding="5px" w="500px" backgroundColor="yellow.200">
         <Heading fontSize="md">Multple Counters</Heading>
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          width="100%"
-          py={5}
-          px={5}
-          gap={5}
-        >
+        <Box display="flex" alignItems="center" justifyContent="center" width="100%" py={5} px={5} gap={5}>
           <Button colorScheme="blackAlpha" onClick={incrementCounter}>
             +
           </Button>
@@ -59,12 +45,9 @@ export default function () {
           <Button colorScheme="blackAlpha" onClick={decrementNumber}>
             -
           </Button>
-         
         </Box>
-        <footer>
-        Msg: Function Size = {funcCount.size}
-        </footer>        
-      </VStack>      
+        <footer>Msg: Function Size = {funcCount.size}</footer>
+      </VStack>
     </>
   );
 }

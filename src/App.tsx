@@ -10,6 +10,8 @@ function App() {
     <ChakraProvider>
       <Container>
         <CallbackCounterDemo />
+
+        <CountDemo />
       </Container>
     </ChakraProvider>
   );

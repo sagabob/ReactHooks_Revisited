@@ -5,11 +5,11 @@ export default function CountA() {
   const [count, setCount] = useState(0);
 
   const increaseWithCallback = useCallback(() => {
-    setCount(count => count + 1);
+    setCount((prev_count) => prev_count + 1);
   }, [count]);
 
   const increase = () => {
-    setCount(count => count + 1)
+    setCount((prev_count) => prev_count + 1);
   };
   const handleClick = () => {
     increase();
@@ -18,23 +18,9 @@ export default function CountA() {
   };
   return (
     <>
-      <VStack
-        shadow="md"
-        borderWidth="1px"
-        padding="5px"
-        w="500px"
-        backgroundColor="yellow.200"
-      >
+      <VStack shadow="md" borderWidth="1px" padding="5px" w="500px" backgroundColor="yellow.200">
         <Heading fontSize="md">Counter</Heading>
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          width="100%"
-          py={5}
-          px={5}
-          gap={5}
-        >
+        <Box display="flex" alignItems="center" justifyContent="center" width="100%" py={5} px={5} gap={5}>
           <Button colorScheme="blackAlpha" onClick={handleClick}>
             +
           </Button>
